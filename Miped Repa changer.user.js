@@ -6,8 +6,8 @@
 // @author       Andronio
 // @homepage     https://github.com/Andronio2/Miped-Repa-changer
 // @supportURL   https://github.com/Andronio2/Miped-Repa-changer/issues
-// @updateURL    https://github.com/Andronio2/Miped-Repa-changer/raw/master/Miped%20Repa%20changer.user.js
-// @downloadURL  https://github.com/Andronio2/Miped-Repa-changer/raw/master/Miped%20Repa%20changer.user.js
+// @updateURL    https://github.com/Andronio2/Miped-Repa-changer/raw/main/Miped%20Repa%20changer.user.js
+// @downloadURL  https://github.com/Andronio2/Miped-Repa-changer/raw/main/Miped%20Repa%20changer.user.js
 // @match        https://miped.ru/f/threads/*
 // @grant        none
 // @run-at       document-idle
