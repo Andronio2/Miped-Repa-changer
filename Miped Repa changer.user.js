@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Miped Repa changer
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  try to take over the world!
 // @author       Andronio
 // @homepage     https://github.com/Andronio2/Miped-Repa-changer
@@ -9,6 +9,7 @@
 // @updateURL    https://github.com/Andronio2/Miped-Repa-changer/raw/main/Miped%20Repa%20changer.user.js
 // @downloadURL  https://github.com/Andronio2/Miped-Repa-changer/raw/main/Miped%20Repa%20changer.user.js
 // @match        https://miped.ru/f/threads/*
+// @match        https://mipped.com/f/threads/*
 // @grant        none
 // @run-at       document-idle
 // ==/UserScript==
@@ -66,7 +67,7 @@ border-style: inset;
         if (!event.target.classList.contains('miped-repa-btn')) return false;
 
         const getUserPage = async name => {
-            let resp = await fetch(`https://miped.ru/user/${name}`);
+            let resp = await fetch(`https://mipped.com/user/${name}`);
             if (resp.ok) {
                 let text = await resp.text();
                 return text;
@@ -91,7 +92,7 @@ border-style: inset;
 
         const actionDo = async (userID, name, action) => {
             console.log(userID, name, action);
-            let resp = await fetch("https://miped.ru/engine/ajax/repa.php", {
+            let resp = await fetch("https://mipped.com/engine/ajax/repa.php", {
                 "headers": {
                     "accept": "*/*",
                     "accept-language": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
@@ -101,7 +102,7 @@ border-style: inset;
                     "sec-fetch-site": "same-origin",
                     "x-requested-with": "XMLHttpRequest"
                 },
-                "referrer": `https://miped.ru/user/${name}/`,
+                "referrer": `https://mipped.com/user/${name}/`,
                 "referrerPolicy": "no-referrer-when-downgrade",
                 "body": `action=${action}&user_id=${userID}&dorepa=2&post_id=1&act=0&skin=miped2&description=script`,
                 "method": "POST",
